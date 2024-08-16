@@ -7,7 +7,17 @@
 @stop
 
 @section('content')
-    
+
+    @forelse($clients as $client)
+     <li><a href="#">{{ $client -> name}}</a></li>
+     <li><a href="#">{{ $client -> email}}</a></li>   
+     <li><a href="#">{{ $client -> phone}}</a></li> 
+    @empty
+
+    <p>No data. </p>
+
+    @endempty
+
 @stop
 
 @section('css')
