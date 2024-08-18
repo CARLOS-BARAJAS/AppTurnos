@@ -9,22 +9,40 @@
 @section('content')
 
     @forelse($clients as $client)
-     <li><a href="#">{{ $client -> name}}</a></li>
-     <li><a href="#">{{ $client -> email}}</a></li>   
-     <li><a href="#">{{ $client -> phone}}</a></li> 
+
+
+        <table id="example1" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo Electronico</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $client->name }}</td>
+                    <td>{{ $client->email }}</td>
+                    <td>{{ $client->email }}</td>
+
+                </tr>
+            </tbody>
+        </table>
     @empty
 
-    <p>No data. </p>
+        <p>No data. </p>
 
     @endempty
 
 @stop
-
-@section('css')
-    {{-- Add here extra stylesheets --}}
-    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-@stop
-
 @section('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+    <script>
+        $(document).ready(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
+
 @stop

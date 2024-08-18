@@ -19,3 +19,4 @@ Route::middleware([
 });
 
 Route::get('/client', [ClientController::class, 'index'])->name('client.index');
+Route::get('/client/create', [ClientController::class, 'create'])->name('client.create');
