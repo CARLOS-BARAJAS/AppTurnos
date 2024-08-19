@@ -8,41 +8,44 @@
 
 @section('content')
 
-    @forelse($clients as $client)
 
-
-        <table id="example1" class="table table-striped" style="width:100%">
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <div class="row d-flex justify-end">
+            <button type="button" class="btn btn-success mb-3">Crear</button>
+        </div>
+        <table id="example1" class="table table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Correo Electronico</th>
                     <th>Telefono</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{ $client->name }}</td>
-                    <td>{{ $client->email }}</td>
-                    <td>{{ $client->email }}</td>
-
-                </tr>
+                @forelse($clients as $client)
+                    <tr>
+                        <td>{{ $client->name }}</td>
+                        <td>{{ $client->email }}</td>
+                        <td>{{ $client->phone }}</td>
+                        <td>
+                            <button class="bg-green-400">Editar</button>
+                            <button>Eliminar</button>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="4" class="text-center">No data.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
-    @empty
-
-        <p>No data. </p>
-
-    @endempty
+    </div>
+</div>
 
 @stop
-@section('js')
-    <script>
-        $(document).ready(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "autoWidth": false,
-            });
-        });
-    </script>
-
-@stop
+@include('_partials.datatable')

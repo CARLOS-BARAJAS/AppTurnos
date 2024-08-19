@@ -19,4 +19,11 @@ class ClientController extends Controller
         return view('client.create');
 
     }
+
+    public function store(Request $request){
+
+        Client::create($request->all());
+        return redirect()->route('client.index');
+            
+    }
 }

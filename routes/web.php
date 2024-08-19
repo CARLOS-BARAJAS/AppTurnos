@@ -20,3 +20,4 @@ Route::middleware([
 
 Route::get('/client', [ClientController::class, 'index'])->name('client.index');
 Route::get('/client/create', [ClientController::class, 'create'])->name('client.create');
+Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
