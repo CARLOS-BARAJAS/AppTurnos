@@ -14,22 +14,17 @@
             <form method="POST" action="{{ route('client.update', $client->id) }}">
                 @csrf
                 @method('PUT')
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="name">Nombre Completo</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ $client->name }}">
+                    <input type="text" class="form-control" id="name" name="name" value="{{ $client->name }}" disabled>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electronico</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ $client->email }}">
+                    <input type="email" class="form-control " id="email" name="email" value="{{ $client->email }}" disabled>
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefono</label>
-                    <input type="text" class="form-control" id="phone" name="phone" value="{{ $client->phone }}">
-                </div>
-                <div class="grid">
-                    <div class=" right-0  mr-4">
-                        <button type="submit" class="bg-green-300 p-2 rounded-lg" value="Update">Guardar</button>
-                    </div>
+                    <input type="text" class="form-control " id="phone" name="phone" value="{{ $client->phone }}" disabled>
                 </div>
             </form>
         </div>

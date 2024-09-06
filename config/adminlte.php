@@ -316,15 +316,15 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Agendamiento',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
+            'text' => 'Clientes',
+            'url' => '/client',
+            'icon' => 'fa-regular fa-user',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa-solid fa-user',
         ],
         [
             'text' => 'change_password',

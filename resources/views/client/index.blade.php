@@ -32,10 +32,14 @@
                         <td>{{ $client->name }}</td>
                         <td>{{ $client->email }}</td>
                         <td>{{ $client->phone }}</td>
-                        <td>
-                            <a href="{{route('client.show', $client->id)}}" class="bg-blue-400 p-2 rounded-lg">Ver</a>
-                            <a href="{{ route('client.edit', $client->id)}}" class="bg-green-400 p-2 rounded-lg">Editar</a>
-                            <button class="bg-red-400 p-2 rounded-lg">Eliminar</button>
+                        <td class="grid grid-cols-3">
+                            <a href="{{route('client.show', $client->id)}}" class="text-neutral-50 bg-blue-400 p-2 mr-6  rounded-lg">Ver</a>
+                            <a href="{{ route('client.edit', $client->id)}}" class="text-neutral-50 bg-green-400 p-2 mr-6  rounded-lg">Editar</a>
+                            <form method="POST" action="{{ route('client.destroy', $client->id)}}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-neutral-50 bg-red-400 p-2  mr-2 rounded-lg" value="DELETE">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 @empty
