@@ -15,12 +15,12 @@
     </div>
     <div class="card-body">
         <div class="row d-flex justify-end">
-            <button type="button" class="bg-green-500 hover:first:bg-green-300 p-2 mb-3 rounded-lg">CREAR</button>
+            <a href="{{route('client.create')}}" type="button" class="bg-green-500 hover:first:bg-green-300 p-2 mb-3 rounded-lg">CREAR</a>
         </div>
         <table id="example1" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre pagina</th>
+                    <th>Nombre</th>
                     <th>Correo Electronico</th>
                     <th>Telefono</th>
                     <th>Acciones</th>
@@ -32,8 +32,8 @@
                         <td>{{ $client->name }}</td>
                         <td>{{ $client->email }}</td>
                         <td>{{ $client->phone }}</td>
-                        <td class="grid grid-cols-3">
-                            <a href="{{route('client.show', $client->id)}}" class="text-neutral-50 bg-blue-400 p-2 mr-6  rounded-lg">Ver</a>
+                        <td class="flex">
+                            <a href="{{route('client.show', $client->id)}}" class="text-neutral-50 bg-blue-400 p-2 mr-6  rounded-lg w-30">Ver</a>
                             <a href="{{ route('client.edit', $client->id)}}" class="text-neutral-50 bg-green-400 p-2 mr-6  rounded-lg">Editar</a>
                             <form method="POST" action="{{ route('client.destroy', $client->id)}}">
                                 @csrf

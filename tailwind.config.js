@@ -16,6 +16,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            screens: {
+                'xs': '400px', // Aquí defines tu propio breakpoint para pantallas pequeñas
+            },
         },
     },
 

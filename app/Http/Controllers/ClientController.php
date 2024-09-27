@@ -15,6 +15,10 @@ class ClientController extends Controller
         $clients = Client::all();
         return view('client.index', compact('clients'));
     }
+    public function menu():View
+    {
+        return view('welcome');
+    }
 
     public function create():View
     { 
